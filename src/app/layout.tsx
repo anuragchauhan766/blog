@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeProvider from "@/context/theme/theme-provider";
+import { AuthProvider } from "@/context/Auth/AuthProvider";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +19,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body
+        className={`background-gradient-light dark:background-gradient-dark ${inter.className}`}
+      >
+        <AuthProvider>
+          <ThemeProvider>
+            <div className=" w-full h-full ">
+              <Navbar />
+              <div className="w-full h-[calc(100%-57px)]">{children}</div>
+            </div>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

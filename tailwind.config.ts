@@ -33,6 +33,7 @@ module.exports = {
         purple: "#892CDC",
         "purple-dark": "#52057B",
         "purple-light": "#BC6FF1",
+        "black-foreground": "#0F0F0F",
       },
     },
   },

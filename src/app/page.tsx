@@ -1,9 +1,10 @@
+import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="p-2 w-full h-full">
-      <Navbar />
+    <div className=" w-full h-full ">
+      <Hero />
     </div>
   );
 }
