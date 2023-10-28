@@ -56,7 +56,7 @@ model Blog {
   text      String?
   image     String?
   video     String?
-  author    User      @relation(fields: [authorId], references: [id])
+  author    User      @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId  String
   comments  Comment[]
   createdAt DateTime  @default(now())
@@ -65,9 +65,9 @@ model Blog {
 model Comment {
   id        Int      @id @default(autoincrement())
   text      String
-  author    User     @relation(fields: [authorId], references: [id])
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
   authorId  String
-  blog      Blog     @relation(fields: [blogId], references: [id])
+  blog      Blog     @relation(fields: [blogId], references: [id], onDelete: Cascade)
   blogId    String
   createdAt DateTime @default(now())
 }
