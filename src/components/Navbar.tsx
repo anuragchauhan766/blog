@@ -13,8 +13,8 @@ async function Navbar() {
 
   return (
     <nav className="w-full flex items-center justify-center border-b-[0.5px] border-b-violet-400/40 p-2 dark:border-b-gray-800">
-      <div className="w-full flex items-center justify-between max-w-4xl">
-        <div className="font-extrabold text-3xl">
+      <div className="w-full flex items-center justify-between max-w-2xl">
+        <div className="font-extrabold text-lg xs:text-3xl">
           <Link href="/">
             <span>Blog</span>
           </Link>

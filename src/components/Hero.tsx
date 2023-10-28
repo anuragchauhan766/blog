@@ -17,14 +17,14 @@ function Hero() {
     <main className="w-full h-full flex items-center justify-center">
       <div
         ref={scope}
-        className="flex items-center justify-center  flex-col gap-2"
+        className="flex items-center justify-center  flex-col gap-2 w-full max-w-2xl"
       >
-        <h1 className="text-5xl font-extrabold text-purple hero-heading">
+        <h1 className="text-4xl xs:text-5xl font-extrabold text-purple hero-heading text-center">
           Write, Share, Inspire
         </h1>
-        <p className="text-xl font-medium text-center hero-para">
-          Empower yourself to write, share your insights,
-          <br /> and inspire others through your words
+        <p className="text-lg xs:text-xl font-medium text-center hero-para w-3/4">
+          Empower yourself to write, share your insights, and inspire others
+          through your words
         </p>
       </div>
     </main>

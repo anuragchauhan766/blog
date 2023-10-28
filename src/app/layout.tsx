@@ -26,7 +26,7 @@ export default function RootLayout({
           <ThemeProvider>
             <div className=" w-full h-full ">
               <Navbar />
-              <div className="w-full h-[calc(100%-57px)]">{children}</div>
+              <div className="w-full h-[calc(100%-58px)]">{children}</div>
             </div>
           </ThemeProvider>
         </AuthProvider>

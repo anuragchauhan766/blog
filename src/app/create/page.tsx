@@ -1,13 +1,14 @@
 "use client";
 import { postBlog } from "@/actions/postBlog";
+import PublishButton from "@/components/PublishButton";
 import { Button } from "@/components/ui/button";
+import { autoHeight } from "@/helper/autoheight";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useFormStatus } from "react-dom";
 import { AiOutlineClose } from "react-icons/ai";
 function CreateBlogPage() {
-  const { pending } = useFormStatus();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [imagesrc, setImagesrc] = useState<string | null>(null);
@@ -39,16 +40,13 @@ function CreateBlogPage() {
     }
     console.log(videoSrc);
   };
-  const autoHeight = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    e.currentTarget.style.height = "auto";
-    e.currentTarget.style.height = `${e.currentTarget.scrollHeight}px`;
-  };
+
   return (
-    <div className="w-full h-full flex justify-center">
+    <div className="w-full h-full flex justify-center ">
       <form
-        className="max-w-4xl w-full mt-3 flex flex-col items-center gap-2"
-        action={(data) => {
-          postBlog(data);
+        className="max-w-2xl w-full mt-3 flex flex-col items-center gap-2 mb-10"
+        action={async (data) => {
+          await postBlog(data);
           setTitle("");
           setContent("");
           setImagesrc(null);
@@ -60,20 +58,10 @@ function CreateBlogPage() {
         <div className="w-full flex items-center justify-between">
           <div className="text-xl font-semibold">Write Your Blog</div>
           <div>
-            <Button
-              type="submit"
-              disabled={pending || !content || !title}
-              className="flex items-center justify-center w-20 bg-purple dark:bg-purple dark:text-white dark:hover:bg-purple-dark hover:bg-purple-dark "
-            >
-              {false ? (
-                <Loader2 className=" h-6 w-6 animate-spin" />
-              ) : (
-                "Publish"
-              )}
-            </Button>
+            <PublishButton title={title} content={content} />
           </div>
         </div>
-        <div className="w-full flex gap-4 flex-col bg-gray-200 dark:bg-black-foreground rounded-2xl p-6">
+        <div className="w-full flex gap-4 flex-col bg-gray-200 dark:bg-black-foreground rounded-2xl p-6 overflow-y-auto no-scrollbar">
           <div className="w-full flex  gap-4 items-center px-6">
             <div>
               <Button

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   darkMode: ["class"],
   content: [
@@ -35,6 +37,10 @@ module.exports = {
         "purple-light": "#BC6FF1",
         "black-foreground": "#0F0F0F",
       },
+    },
+    screens: {
+      xs: "426px",
+      ...defaultTheme.screens,
     },
   },
   plugins: [require("tailwindcss-animate")],
