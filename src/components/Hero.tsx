@@ -11,6 +11,7 @@ function Hero() {
       { duration: 0.5 }
     );
     animate(".hero-para", { y: [10, 0], opacity: [0, 1] }, { duration: 1 });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
