@@ -42,7 +42,7 @@ function CreateBlogPage() {
   };
 
   return (
-    <div className="w-full h-full flex justify-center ">
+    <div className="w-full h-full flex justify-center px-2">
       <form
         className="max-w-2xl w-full mt-3 flex flex-col items-center gap-2 mb-10"
         action={async (data) => {
@@ -61,15 +61,18 @@ function CreateBlogPage() {
             <PublishButton title={title} content={content} />
           </div>
         </div>
-        <div className="w-full flex gap-4 flex-col bg-gray-200 dark:bg-black-foreground rounded-2xl p-6 overflow-y-auto no-scrollbar">
-          <div className="w-full flex  gap-4 items-center px-6">
+        <div className="w-full flex gap-4 flex-col bg-gray-200 dark:bg-black-foreground rounded-2xl p-2 xs:p-6 overflow-y-auto no-scrollbar">
+          <div className="w-full flex  gap-4 items-center px-1 xs:px-6">
             <div>
               <Button
                 asChild
                 variant="outline"
                 className="bg-transparent dark:bg-transparent border-2 border-gray-300"
               >
-                <label htmlFor="cover-image" className="cursor-pointer">
+                <label
+                  htmlFor="cover-image"
+                  className="cursor-pointer text-sm "
+                >
                   {imagesrc ? "Change Cover Image" : "Add a Cover Image"}
                 </label>
               </Button>
@@ -131,7 +134,7 @@ function CreateBlogPage() {
                   </div>
                 )}
                 <textarea
-                  className="bg-transparent appearance-none outline-none w-full h-auto resize-none font-extrabold  text-4xl dark:text-white overflow-hidden box-border placeholder:text-4xl placeholder:font-extrabold placeholder:text-neutral-500 py-2 px-6"
+                  className="bg-transparent appearance-none outline-none w-full h-auto resize-none font-extrabold  text-2xl xs:text-4xl dark:text-white overflow-hidden box-border xs:placeholder:text-4xl placeholder:text-2xl placeholder:font-extrabold placeholder:text-neutral-500 py-2 px-2 xs:px-6"
                   placeholder="New Blog Title..."
                   rows={1}
                   name="title"
@@ -163,7 +166,7 @@ function CreateBlogPage() {
                   </div>
                 )}
                 <textarea
-                  className="bg-transparent appearance-none outline-none w-full h-auto resize-none font-semibold  text-base dark:text-white overflow-hidden py-2 box-border placeholder:text-base placeholder:font-semibold placeholder:text-neutral-500 px-6"
+                  className="bg-transparent appearance-none outline-none w-full h-auto resize-none font-semibold  text-base dark:text-white overflow-hidden py-2 box-border placeholder:text-base placeholder:font-semibold placeholder:text-neutral-500 px-2 xs:px-6"
                   placeholder="Write Your Blog Content here..."
                   name="content"
                   onChange={(e) => {
